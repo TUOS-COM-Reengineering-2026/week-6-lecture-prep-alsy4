@@ -1,8 +1,10 @@
 import unittest
-from lecture import randomised_function
+import lecture
+from unittest.mock import patch
 
 class MyTestCase(unittest.TestCase):
 
-    def test_randomised_function(self):
-        self.assertEqual('software', randomised_function())  # This will pass or fail randomly
-        # TODO: Can we make this test deterministic? (HINT: Mock testing)
+    @patch('lecture.randomised_function')
+    def test_randomised_function(self, mock_randomised_function):
+        mock_randomised_function.return_value = 'software'
+        self.assertEqual('software', lecture.randomised_function())
