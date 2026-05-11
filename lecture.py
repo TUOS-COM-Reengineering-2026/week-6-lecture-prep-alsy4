@@ -3,16 +3,7 @@ def is_palindrome(s):
     # Check if a string is a palindrome or not.
     # To make it simple, let's assume that an empty string is a palindrome.
 
-    if len(s) <= 1:
-        return True  # base case 1
-    elif s[0] != s[-1]:
-        return False  # base case 2
-    else:
-        return is_palindrome(s[1:-1]) # recursive case
-
-    # TODO: test_palindrome_long() will trigger RecursionError. Can you fix it by rewriting the above code?
-    # HINT: You can use a loop to replace the recursive call.
-    # TODO: How do you check if your fix is correct?
+    return s[::-1] == s
 
 
 # PART 2
